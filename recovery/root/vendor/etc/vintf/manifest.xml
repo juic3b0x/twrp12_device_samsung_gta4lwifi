@@ -1,4 +1,23 @@
-<manifest version="1.0" type="device" target-level="4">
+<!--
+    Input:
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        skeymaster_v4_manifest.xml
+        radio_manifest_wifionly.xml
+        manifest_chip.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
+-->
+<manifest version="2.0" type="device" target-level="4">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -79,7 +98,7 @@
         </interface>
         <fqname>@1.0::IGatekeeper/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="hidl" override="true">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
         <version>4.0</version>
@@ -87,6 +106,7 @@
             <name>IKeymasterDevice</name>
             <instance>default</instance>
         </interface>
+        <fqname>@4.0::IKeymasterDevice/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.media.omx</name>
