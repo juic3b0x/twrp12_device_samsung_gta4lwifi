@@ -15,13 +15,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_TARGET_VNDK_VERSION := 31
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.metadata.method=dm-default-key \
+    ro.crypto.dm_default_key.options_format.version=2 \
+    ro.crypto.volume.options=::v2
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -62,8 +67,8 @@ TW_USE_FSCRYPT_POLICY := 2
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-PLATFORM_SECURITY_PATCH := 2099-12-31
-VENDOR_SECURITY_PATCH := 2099-12-31
+PLATFORM_SECURITY_PATCH := 2127-12-31
+VENDOR_SECURITY_PATCH := 2127-12-31
 PLATFORM_VERSION := 127
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 BOARD_USES_QCOM_FBE_DECRYPTION := true
