@@ -9,6 +9,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_gta4lwifi.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_gta4lwifi-user \
-    twrp_gta4lwifi-userdebug \
     twrp_gta4lwifi-eng
